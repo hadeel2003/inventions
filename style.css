@@ -1,0 +1,33 @@
+:root{--paper:#e9e7e2;--paper2:#bdbab3;--wine:#7a2b3c;--ink:#6b6a66;--env:#5a1f2b;--env2:#6f2a39;--gold:#b8923f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--paper);overflow:hidden;font-family:'Cormorant Garamond',Georgia,serif;color:var(--wine)}
+#stage{position:relative;height:100%;background:linear-gradient(180deg,#f0eee9 0%,#e4e2dc 55%,var(--paper2) 100%);overflow:hidden}
+.scene{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transition:opacity 1.2s ease;pointer-events:none;padding:0 24px}
+.scene.on{opacity:1;pointer-events:auto}
+.sm{font-family:'Cinzel',Georgia,serif;letter-spacing:.35em;font-size:clamp(12px,3.6vw,16px);margin:6px 0}
+.big{font-family:'Cinzel',Georgia,serif;font-size:clamp(30px,10vw,48px);letter-spacing:.12em;color:var(--ink);margin:10px 0}
+.script{font-family:'Pinyon Script','Snell Roundhand',cursive;font-size:clamp(56px,19vw,92px);line-height:.95;color:var(--ink);margin:0}
+.amp{font-family:'Pinyon Script',cursive;font-size:clamp(44px,14vw,66px);color:#b79aa0;margin:-6px 0}
+.date{font-size:clamp(26px,8vw,38px);letter-spacing:.08em;color:var(--ink);margin:0 0 26px}
+.det{font-size:clamp(15px,4.4vw,19px);letter-spacing:.14em;text-transform:uppercase;margin:6px 0}
+.btn{margin-top:30px;display:inline-block;padding:12px 26px;border:1px solid var(--wine);color:var(--wine);text-decoration:none;font-family:'Cinzel',Georgia,serif;letter-spacing:.2em;font-size:13px;border-radius:2px}
+#bf{position:absolute;left:50%;top:46%;width:min(62vw,260px);transform:translate(-50%,-50%) scale(.4);opacity:0;transition:top 1.8s cubic-bezier(.5,0,.2,1),transform 1.8s cubic-bezier(.5,0,.2,1),opacity .8s;filter:drop-shadow(0 8px 6px rgba(80,60,40,.25));z-index:2}
+#bf.out{opacity:1;top:17%;transform:translate(-50%,-50%) scale(1)}
+.wing{transform-origin:100px 70px;animation:flap .45s ease-in-out infinite alternate}
+#bf.out.calm .wing{animation-duration:2.6s}
+@keyframes flap{from{transform:scaleX(1)}to{transform:scaleX(.3)}}
+#env{position:absolute;left:50%;top:50%;width:min(76vw,300px);aspect-ratio:3/4;transform:translate(-50%,-50%);transition:transform 1.4s ease,opacity 1.2s ease;z-index:3;cursor:pointer;perspective:900px}
+#env.gone{transform:translate(-50%,40%);opacity:0;pointer-events:none}
+#env .back,#env .front,#env .flap{position:absolute;inset:0}
+#env .back{background:var(--env);border-radius:4px;box-shadow:0 18px 40px rgba(60,20,30,.35)}
+#env .front{background:var(--env2);clip-path:polygon(0 0,50% 46%,100% 0,100% 100%,0 100%)}
+#env .flap{height:56%;background:#4a1823;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease .1s;z-index:2}
+#env.open .flap{transform:rotateX(180deg)}
+.seal{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e3c783,var(--gold));z-index:3;display:flex;align-items:center;justify-content:center;color:#5a1f2b;font-size:22px;transition:opacity .4s}
+#env.open .seal{opacity:0}
+#hint{position:absolute;left:0;right:0;bottom:9%;text-align:center;font-family:'Cinzel',Georgia,serif;letter-spacing:.3em;font-size:12px;color:var(--wine);animation:pulse 2s infinite;z-index:4;transition:opacity .5s}
+@keyframes pulse{50%{opacity:.35}}
+#replay{position:absolute;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:none;border:0;color:var(--ink);font-size:12px;letter-spacing:.15em;opacity:0;transition:opacity 1s;cursor:pointer;font-family:'Cinzel',Georgia,serif;z-index:5}
+#mute{position:absolute;right:14px;top:calc(12px + env(safe-area-inset-top,0px));width:40px;height:40px;border-radius:50%;border:1px solid var(--wine);background:rgba(255,255,255,.4);color:var(--wine);font-size:18px;cursor:pointer;z-index:6;opacity:0;transition:opacity 1s}
+#mute.off{text-decoration:line-through;opacity:.5!important}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#e9e7e2}}
