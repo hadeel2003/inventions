@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wedding Invitation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;500&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <svg width="0" height="0" style="position:absolute"><defs>
+    <linearGradient id="pk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7dfe4"/><stop offset="1" stop-color="#e9b9c4"/></linearGradient>
+    <g id="w">
+      <path d="M100 70C118 30 158 10 192 22C197 52 170 82 128 88Z" fill="url(#pk)" stroke="#b8923f" stroke-width="3"/>
+      <path d="M100 74C125 80 152 95 150 118C126 130 108 108 100 80Z" fill="url(#pk)" stroke="#b8923f" stroke-width="3"/>
+      <path d="M104 68L184 28M104 72L190 48M104 76L160 76M104 80L146 108" stroke="#b8923f" stroke-width=".9" fill="none"/>
+      <path d="M192 24C196 52 170 82 128 88" stroke="#b8923f" stroke-width="6" stroke-dasharray="2 4" fill="none" opacity=".8"/>
+    </g></defs></svg>
+
+  <svg id="bf" viewBox="0 0 200 140" aria-hidden="true">
+    <g class="wing"><use href="#w"/></g>
+    <g transform="translate(200,0) scale(-1,1)"><g class="wing"><use href="#w"/></g></g>
+    <path d="M100 52C96 52 96 62 98 90C99 100 101 100 102 90C104 62 104 52 100 52Z" fill="#7a5a1e"/>
+    <path d="M99 54C90 34 82 28 76 24M101 54C110 34 118 28 124 24" stroke="#5a4416" stroke-width="1.2" fill="none"/>
+  </svg>
+
+  <div class="scene" id="s1">
+    <div class="sm" style="margin-top:34vh">YOU'RE</div>
+    <div class="big">CORDIALLY</div>
+    <div class="sm">INVITED</div>
+  </div>
+
+  <div class="scene" id="s2">
+    <div class="sm" style="margin-top:24vh">WE'RE GETTING MARRIED</div>
+    <p class="script" style="margin-top:22px">Adele</p>
+    <div class="amp">&amp;</div>
+    <p class="script">Oliver</p>
+  </div>
+
+  <div class="scene" id="s3">
+    <div class="sm" style="margin-top:22vh">SAVE THE DATE</div>
+    <p class="date" style="margin-top:16px">DECEMBER 25, 2026</p>
+    <div class="det">11:00 AM – 07:00 PM</div>
+    <div class="det">Love Gardens Villa</div>
+    <div class="det">Pearlsville CA 1238 Miami</div>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Love+Gardens+Villa+Miami">VIEW LOCATION</a>
+  </div>
+
+  <div id="env"><div class="back"></div><div class="front"></div><div class="flap"></div><div class="seal">♥</div></div>
+  <div id="hint">TAP TO OPEN</div>
+  <button id="replay">REPLAY</button>
+  <button id="mute" aria-label="Music on/off">♪</button>
+</div>
+<script src="script.js"></script>
+</body>
+  </html>
+  
